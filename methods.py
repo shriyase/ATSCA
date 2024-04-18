@@ -154,8 +154,8 @@ def set_up_ChatGPT(calendar, tasks):
         stream=True,
     )
 
-    for chunk in stream:
-        st.write(chunk.choices[0].delta.content or "", end="")
+    #for chunk in stream:
+        #st.write(chunk.choices[0].delta.content or "", end="")
 
     return client
 
