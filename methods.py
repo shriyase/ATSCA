@@ -129,10 +129,10 @@ def get_tasks():
 
 def set_up_ChatGPT(calendar, tasks):
     os.environ["OPENAI_API_KEY"] = (
-        "sk-proj-iwRf0csNC4AlKWHMs6alT3BlbkFJSLbEYl0IsET7NDIocoIy"
+        "sk-proj-AVCCrfTqbHBqX8KlZQyWT3BlbkFJmC4cEMITglxa17LJcK4L"
     )
     client = OpenAI()
-    client.api_key = "sk-proj-iwRf0csNC4AlKWHMs6alT3BlbkFJSLbEYl0IsET7NDIocoIy"
+    client.api_key = "sk-proj-AVCCrfTqbHBqX8KlZQyWT3BlbkFJmC4cEMITglxa17LJcK4L"
 
     stream = client.chat.completions.create(
         model="gpt-3.5-turbo",
