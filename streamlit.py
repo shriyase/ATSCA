@@ -102,7 +102,7 @@ Here's the previous conversation with the user, read it and understand user pref
 initial_prompt = context + instruction + past_conversation
 
 # %%
-user_request = st.text_input()
+user_request = st.text_input("Enter your query here")
 combined_prompt = initial_prompt + "\nUser request: " + user_request
 
 
@@ -135,7 +135,7 @@ while not finalized_response:
     messages.append({"role": "assistant", "content": response})
     if re.compile(r"\?").search(response):
         finalized_response = False
-        user_feedback = st.text_input()
+        user_feedback = st.text_input("Feedback")
         messages.append({"role": "user", "content": user_feedback})
         log_message("user", user_feedback)
         log_activity("user", user_feedback)
