@@ -12,8 +12,6 @@ import googleapiclient.discovery
 from datetime import datetime, timedelta, timezone
 import pytz
 
-from mistralai.client import MistralClient
-from mistralai.models.chat_completion import ChatMessage
 import streamlit as st
 
 
@@ -162,33 +160,6 @@ def set_up_ChatGPT(calendar, tasks):
     return client
 
 
-def set_up_MISTRAL(calendar, tasks):
-    # Assuming current_time() is defined somewhere in your code.
-    os.environ["MISTRAL_API_KEY"] = "FZrH3btKf0XO4soOHwxozkDacRKcVixi"
-    api_key = os.environ["MISTRAL_API_KEY"]
-    client = MistralClient(api_key=api_key)
-
-    # Create ChatMessage objects instead of using dictionaries
-    messages = [
-        ChatMessage(
-            role="user",
-            content="Here's my calendar for the week, store it for your reference. Today's date and time is: "
-            + current_time()
-            + "\n"
-            + calendar
-            + "\n"
-            + "To-Do list: "
-            + tasks
-            + "\n"
-            + "Print the to-do list and the events you see for today. Use 12HR format for time.",
-        )
-    ]
-
-    chat_response = client.chat(model="mistral-large-latest", messages=messages)
-
-    print(chat_response.choices[0].message.content)
-
-    return client
 
 
 def moveEvent(event_id, new_date, new_time):
