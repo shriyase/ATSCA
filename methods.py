@@ -12,8 +12,6 @@ import googleapiclient.discovery
 from datetime import datetime, timedelta, timezone
 import pytz
 
-import streamlit as st
-
 
 SCOPES = [
     "https://www.googleapis.com/auth/calendar",
@@ -128,11 +126,9 @@ def get_tasks():
 
 
 def set_up_ChatGPT(calendar, tasks):
-    os.environ["OPENAI_API_KEY"] = (
-        "sk-proj-AVCCrfTqbHBqX8KlZQyWT3BlbkFJmC4cEMITglxa17LJcK4L"
-    )
+    os.environ["OPENAI_API_KEY"] = "Insert your OpenAI API key here"
     client = OpenAI()
-    client.api_key = "sk-proj-AVCCrfTqbHBqX8KlZQyWT3BlbkFJmC4cEMITglxa17LJcK4L"
+    client.api_key = "Insert your OpenAI API key here"
 
     stream = client.chat.completions.create(
         model="gpt-3.5-turbo",
@@ -148,18 +144,16 @@ def set_up_ChatGPT(calendar, tasks):
                 + "To-Do list: "
                 + tasks
                 + "\n"
-                + "Print the to-do list for the week and the events you see for today. Use 12HR format for time.",
+                + "Print the to-do list for the week and the events you see for today. You are a virtual calendar assistant. Ask the user how you can help them today. Use 12HR format for time.",
             }
         ],
         stream=True,
     )
 
-    #for chunk in stream:
-        #st.write(chunk.choices[0].delta.content or "", end="")
+    for chunk in stream:
+        print(chunk.choices[0].delta.content or "", end="")
 
     return client
-
-
 
 
 def moveEvent(event_id, new_date, new_time):
