@@ -1,4 +1,5 @@
-# Automated Calendar Assistant and Task Scheduler 
+# ATSCA
+## Automated Calendar Assistant and Task Scheduler
 This is a class project for EECS 545: Machine Learning
 
 In a conventional setting, individuals face the meticulous task of arranging and updating
