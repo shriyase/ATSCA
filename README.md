@@ -24,7 +24,7 @@ How this works:
 ![image](https://github.com/user-attachments/assets/0582716d-2cef-4189-8153-38d1a9093cbe)
 
 How to use this assistant:
-Authenticate using Google OAuth and obtain the credential for your Google calendar, paste it into the methods.py file. Then simply run the notebook to interact with the assistant!
+Authenticate using Google OAuth and obtain the credential for your Google calendar, paste it into the methods.py file. Also paste your OpenAI API key. Then simply run the notebook to interact with the assistant!
 
 
 Example interaction:
