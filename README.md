@@ -15,7 +15,7 @@ while minimizing the errors that are intrinsic to traditional manual methods.
 
 Think of this assistant as your personal secretary. Example prompts that you could ask:
 1. "Schedule a jog for when I'm free."
-2. "Clear my afternoon"
+2. "Clear my afternoon."
 3. "Move my meeting with Smith to Monday afternoon"
 4. "Schedule me a study time over the next week to prepare for my final exams."
 5. "Find time for me to read every week."
